@@ -1,0 +1,10 @@
+<div class="panel">
+    <div class="panel-inner">
+        <a href="{{url}}" target="_blank">
+            <div class="panel-title" *ngIf="title">{{title}}</div>
+            <div class="panel-url" *ngIf="url || display_url">{{display_url || url}}</div>
+            <div class="panel-type" *ngIf="type">{{type}}</div>
+            <div class="panel-desc" *ngIf="description">{{description}}</div>
+        </a>
+    </div>
+</div>

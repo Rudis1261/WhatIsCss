@@ -1,0 +1,170 @@
+@import "../../assets/scss/settings";
+@import "../../assets/scss/mixins";
+
+$ddBackground: #fff;
+$ddPadding: 0 0 5px;
+$ddNavPadding: 11px 20px 0;
+$ddMinHeight: 40px;
+$ddFontSize: 14px;
+$ddLineHeight: 16px;
+$ddBorder: 1px solid #ccc;
+$ddBorderRadius: 3px;
+$ddBoxShadow: 1px 1px 5px rgba(#000, 0.1);
+
+$ddMenuBackground: #fff;
+$ddMenuPadding: 0;
+$ddMenuMargin: 0;
+$ddMenuBorder: 1px solid #ccc;
+$ddMenuBorderRadius: 3px;
+$ddMenuBoxShadow: 1px 1px 5px rgba(#000, 0.1);
+$ddMenuMinWidth: 200px;
+
+$ddItemPadding: 0 10px;
+$ddItemFontSize: 14px;
+$ddItemLineHeight: 40px;
+$ddItemMinHeight: 30px;
+$ddItemHoverBackground: #efefef;
+$ddItemActiveBackground: darken($ddBackground, 3%);
+
+:host {
+  position: relative;
+  display: inline-block;
+  padding: $ddPadding;
+
+  nav {
+    background: $ddBackground;
+    min-height: $ddMinHeight;
+    display: inline-block;
+    border: $ddBorder;
+    font-size: $ddFontSize;
+    line-height: $ddLineHeight;
+    padding: $ddNavPadding;
+    box-shadow: $ddBoxShadow;
+    cursor: pointer;
+
+    @include border-radius($ddBorderRadius);
+
+    &.active {
+      background: darken($ddBackground, 5%);
+    }
+
+    i {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      text-align: center;
+      position: relative;
+      top: 2px;
+      margin: 0 -4px 0 4px;
+      float: right;
+      @include transform-origin(center center);
+    }
+  }
+
+  ul {
+    background: $ddMenuBackground;
+    margin: $ddMenuMargin;
+    padding: $ddMenuPadding;
+    border: $ddMenuBorder; 
+    top: ($ddMinHeight + 2px);
+    list-style: none;
+    min-width: $ddMenuMinWidth;
+    position: absolute;
+    left: 0; 
+    right: 0;
+    z-index: 1;
+    box-shadow: $ddMenuBoxShadow;
+
+    @include transform-origin(top left);
+    @include border-radius($ddMenuBorderRadius);
+
+    li {
+      font-size: $ddItemFontSize;
+      line-height: $ddItemLineHeight;
+      padding: $ddItemPadding;
+      min-height: $ddItemMinHeight;
+      border-left: 2px solid transparent;
+
+      &.active {
+        background: $ddItemActiveBackground;
+      }
+
+      &:hover {
+        background: $ddItemHoverBackground!important;
+      } 
+
+      a,
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    @include respond-to($screenTablet) {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  }
+
+  &[disabled] {
+    &:hover {
+      nav {
+        cursor: default;
+      }
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  &.left {
+    ul {
+      left: 0; 
+      right: auto;
+      @include transform-origin(top left);
+    }
+  }
+
+  &.up {
+    ul {
+      bottom: 47px;
+      top: auto;
+      @include transform-origin(bottom center);
+    }
+  }
+
+  &.right {
+    ul {
+      left: auto; 
+      right: 0;
+      @include transform-origin(top right);
+    }
+  }  
+
+  &.up.right {
+    ul {
+      left: auto; 
+      right: 0;
+      @include transform-origin(bottom right);
+    }
+  }
+
+  @include respond-to($screenTablet) {
+    &.mobile-block {
+      width: 100%;
+      @include clearfix();
+      nav {
+        width: 100%;
+      }
+
+      ul {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}

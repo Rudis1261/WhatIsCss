@@ -1,0 +1,16 @@
+<div class="row">
+    <h1 class="col-12">Useful links</h1>
+    <p class="col-6">These are some of the best services out there. And I use them with pride</p>
+</div>
+
+<div class="row">
+    <app-panel 
+        [title]="item.title"
+        [type]="item.type"
+        [url]="item.url"
+        [display_url]="item.display_url"
+        [description]="item.description"
+        *ngFor="let item of items"
+    ></app-panel>
+</div>
+

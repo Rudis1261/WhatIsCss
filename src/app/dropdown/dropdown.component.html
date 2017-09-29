@@ -1,0 +1,27 @@
+<div class="dropdown {{orientation}}" [ngClass]="{'open': open}" *ngIf="items!=false">
+    <nav (click)="open=!open" [ngClass]="{'active': open}">
+        <ng-content></ng-content>
+        <i class="icon-triangle-right" [@dropdownTriangle]="open && style == '1'" [@dropdownTriangleAlt]="open && style == '2'" ></i>
+    </nav>
+    <ul [@openModal]="open" *ngIf="open">
+        <li *ngFor="let item of items" [ngClass]="{'active': activeClass == item[classKey]}">
+
+            <a
+                [routerLink]="[item.url]"
+                (click)="open=!open"
+                *ngIf="!setClass && !callback"
+            >{{item.text}}</a>
+
+            <span
+                (click)="setBodyClass(item.class)"
+                *ngIf="setClass && !callback"
+            >{{item.text}}</span>
+
+            <span
+                (click)="setAction(item)"
+                *ngIf="action && callback"
+            >{{item.text}}</span>
+
+        </li>
+    </ul>
+</div>

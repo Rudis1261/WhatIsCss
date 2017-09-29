@@ -1,0 +1,87 @@
+@import "../../assets/scss/settings";
+@import "../../assets/scss/mixins";
+
+:host {
+  padding: 0 10px;
+  margin: 0 0 20px;
+  min-height: 150px;
+
+  @include flex(0 0 auto);
+
+  .panel {
+    width: 100%;
+    height: 100%;
+
+    &-inner {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: hidden;
+      box-shadow: 1px 1px 10px rgba(#000, 0.05);
+      position: relative;
+
+      @include border-radius(4px);
+    }
+
+    &-title,
+    &-desc,
+    &-url,
+    &-type {
+      padding: 0 10px;
+    }
+
+    &-title {
+      min-height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      background: rgb(93, 93, 93);
+    }
+
+    &-url {
+      font-size: 12px;
+      line-height: 24px;
+      font-style: italic;
+      color: #dedede;
+      background: #333;
+    }
+
+    &-type {
+      line-height: 22px;
+      font-size: 12px;
+      background: rgba(#333, 0.5);
+      color: #fff;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 0 10px;
+    }
+
+    &-desc {
+      line-height: 18px;
+      font-size: 14px;
+      padding: 12px 10px 25px;
+      display: block;
+      color: #353535;
+    }
+
+    a {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  @include respond-to($screenTablet) {
+    @include flex(0 0 100%);
+  }
+
+  @include respond-from($screenTablet) {
+    @include flex(0 0 33.32%);
+  }
+
+  @include respond-from($screenDesktop) {
+    @include flex(0 0 24.98%);
+  }
+}

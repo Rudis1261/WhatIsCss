@@ -1,0 +1,52 @@
+<div class="row">
+    <h1 class="col-12">CSS</h1>
+    <p class="col-6">Making the Internet beautiful since 1996. And without CSS, websites, and modern life would be allot duller.</p>
+</div>
+
+<div class="row">
+    <h3 class="col-12">What does CSS stand for?</h3>
+    <p class="col-6">CSS is an acronym for <b>"Cascading Style Sheets"</b></p>
+</div>
+
+<div class="row">
+    <h3 class="col-12">Websites</h3>
+    <p class="col-8">Most websites are made up of multiple technologies. Usually each one of these technologies have their own set of rules you will need to learn. Some technologies are required for the data (BackEnd) and some are required for the (FrontEnd) what you see and click.</p>
+    <div class="col-7">
+        <b>To get started in Web Development, you will need to familiarize yourself with these:</b>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript (Optional, but not really)</li>
+        </ul>
+        <p>These are the core building block of a Web Page.</p>
+    </div>
+</div>
+
+<div class="row">
+    <h3 class="col-12">So what part does CSS play?</h3>
+    <p class="col-6">HTML documents defines a Web Page layout and general structure of the page. HTML documents consists of many HTML tags, either side by side or nested in each other.</p>
+    <p class="col-6">CSS gives you the ability to style these elements, and have them look exactly the way you would like them to. It all comes together to create the website you see in your browser.</p>
+</div>
+
+<div class="row">
+    <h3 class="col-12">What it the difference?</h3>
+    <div class="col-12 btn-holder">
+        <app-dropdown 
+            [items]="files" 
+            (action)="handleAction($event)" 
+            [callback]="callback"
+            [classKey]="classKey" 
+            class="pull-left"
+        >Site</app-dropdown>
+        <div class="container pull-left btn-group">
+            <span
+                (click)="setType(t.type)"
+                class="btn btn-sm"
+                *ngFor="let t of types"
+                [ngClass]="{'btn-primary': t.type==type}"
+            >{{t.text}}</span>
+        </div>
+        <div class="clearfix"></div>
+        <lazy [img]="site[type]" *ngIf="site[type]"></lazy>
+    </div>
+</div>

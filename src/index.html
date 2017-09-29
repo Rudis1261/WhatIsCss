@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WhatIsCss.com</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+
+    <meta name="author" content="Rudi Strydom">
+    <meta name="keywords" content="what,is,css,learn,about">
+    <meta name="description" content="Learn all about what css is at whatiscss.com">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-98788817-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <style type="text/css">
+      .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -60px 0 0 -32px;
+      }
+      .loader span {
+        font-family: monospace;
+        font-size: 60px;
+        display: inline-block;
+        animation: pulse 0.4s alternate infinite ease-in-out;
+        -webkit-animation: pulse 0.4s alternate infinite ease-in-out;
+        -moz-animation: pulse 0.4s alternate infinite ease-in-out;
+        -ms-animation: pulse 0.4s alternate infinite ease-in-out;
+      }
+
+      .loader span:nth-child(odd) {
+        animation-delay: 0.4s;
+        -webkit-animation-delay: 0.4s;
+        -moz-animation-delay: 0.4s;
+        -ms-animation-delay: 0.4s;
+      }
+
+      @keyframes pulse {
+        to {
+          transform: scale(0.8);
+          -webkit-transform: scale(0.8);
+          -moz-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          opacity: 0.5;
+          filter: alpha(opacity=50);
+        }
+      }
+    </style>
+  </head>
+  <body class="theme5">
+    <app-root>
+      <div class="loader">
+        <span>{</span><span>}</span>
+      </div>
+    </app-root>
+  </body>
+</html>

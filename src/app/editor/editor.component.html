@@ -1,0 +1,44 @@
+<div class="editor-main clearfix">
+
+  <div class="editor-tabs">
+    
+    <div
+      class="tab"
+      *ngIf="htmlEnabled"
+      (click)="activeTab='html'"
+      [ngClass]="{'active': activeTab == 'html'}"
+    >Html <span class="dot" [ngClass]="{'active': activeTab == 'html'}"></span></div>
+    
+    <div
+      class="tab"
+      *ngIf="cssEnabled"
+      (click)="activeTab='css'"
+      [ngClass]="{'active': activeTab == 'css'}"
+    >Css <span class="dot" [ngClass]="{'active': activeTab == 'css'}"></span></div> 
+    
+    <div
+      class="tab"
+      *ngIf="isMobile"
+      (click)="activeTab='output'"
+      [ngClass]="{'active': activeTab == 'output'}"
+    >Output <span class="dot" [ngClass]="{'active': activeTab == 'output'}"></span></div>
+
+  </div>
+
+  <div class="editor-col input" [ngClass]="{'active': htmlEnabled && activeTab == 'html'}">
+    <div class="overlay-container">
+      <pre id="html-editor"></pre>
+    </div>
+  </div>
+
+  <div class="editor-col input" [ngClass]="{'active': cssEnabled && activeTab == 'css'}">
+    <div class="overlay-container">
+      <pre id="css-editor"></pre>
+    </div>
+  </div>
+
+  <div class="editor-col" [ngClass]="{'active': outputEnabled}" *ngIf="!isMobile || (isMobile && activeTab == 'output')">
+    <label class="render">RESULT</label>
+    <iframe frameborder="0" [srcdoc]="iframeSrcDoc"></iframe>
+  </div>
+</div>

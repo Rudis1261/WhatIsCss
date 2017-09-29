@@ -1,0 +1,94 @@
+<div class="row">
+  <h1 class="col-12">The Basics</h1>
+</div>
+
+<div class="row">
+  <h3 class="col-12">Before we move on to CSS</h3>
+  <div class="col-12">
+    <span>To use CSS it is important to understand that CSS is used to style HTML Markup. HTML is a structured markup language, that browsers can read and understand.</span>    
+    <br>
+    <br>
+    <h4>HTML5 bare bones structure</h4>
+    <pre class="small">{{this.example.html_1}}</pre>
+    <br>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-12">
+    <h3>What is a HTML tag?</h3>
+    An HTML tag is a set of keywords wrapped in the <span class="code">&lt;</span> <span class="code">&gt;</span>
+    brackets. This makes it possible for the browser to read and understand how to display elements. Back in the day when the Internet came around, these various tags
+    were the only thing people had to create a website. And each tag served a different purpose.
+    <br>
+    <br>
+    These vary from image tags, to block tags, to heading tags and many many more tags.
+    <br>
+    <br>
+    This is a <b>DIV</b> tag, mostly used to group a collection of elements:
+    <code class="flex">{{this.example.html_2}}</code>
+    <br>
+    Note that there are 2 div tags. The first one <span class="code">{{this.example.html_3}}</span> tells the browser
+    that that type of element is starting,
+    and <span class="code">{{this.example.html_4}}</span> to mark the element's end.
+    The slash <span class="code">/</span> tells the browser that it is the end div type element in this case.
+    <br>
+    <br>
+    A browser starts reading the document, sees there is a div tag. Then it considers everything after that to be the
+    content of the div. Until it find the corresponding closing div. Most browsers are smart enough to close these for you,
+    but try and remember the importance of it. For instance AngularJS 4 will break if it finds a mismatching set of tags.
+    <br>
+    <br>
+    These tags can be nested inside each other. Often you do need to do this to achieve a certain look. 
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-12">
+    <h3>More HTML tags</h3>
+    Like I mentioned earlier there are a number of different tags, actually quite a few. So I won't name them all.
+    But rather the ones we use frequently.
+    <br>
+    <br>
+    <div *ngFor="let t of htmlTags" class="tags">
+      <span class="code">{{t.tag}}</span> - {{t.description}}
+    </div>
+    <br>
+    <br>
+    <app-help-block>
+      Some tags do not need a closing tag since it has no content.
+      <ul>
+        <li>Images</li>
+        <li>Line Breaks</li>
+        <li>Horizontal Rules</li>
+        <li>Input Boxes</li>
+      </ul>
+    </app-help-block>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-12">
+    <h3>More coming soon....</h3>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-12">
+    <h3>Basic editor</h3>
+  </div>
+  <div class="col-12">
+    <app-editor></app-editor>
+  </div>
+</div>

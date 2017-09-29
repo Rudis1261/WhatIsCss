@@ -1,0 +1,24 @@
+@include keyframes(spinner) {
+  from { @include transform(rotate(0deg)); }
+  to { @include transform(rotate(360deg)); }
+}
+
+@include keyframes(spingIcon) {
+  from { @include transform(translateX(-50%) translateY(-50%) rotate(0deg)); }
+  to { @include transform(translateX(-50%) translateY(-50%) rotate(360deg)); }
+}
+
+.spin {
+  color: darken($colorPrimary, 30%);
+  display: inline-block;
+  @include animation(spinner 1s linear infinite);
+}
+
+.icon-spin {
+	display: inline-block;
+	@include animation(spingIcon 1s linear infinite);
+}
+
+.btn-primary .spin {
+	color: #fff;
+}

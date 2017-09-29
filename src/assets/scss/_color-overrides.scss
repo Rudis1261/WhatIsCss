@@ -1,0 +1,134 @@
+$colors:(
+  'theme1': (
+    'primary': #F2F2EB,
+    'secondary': #85936E,
+    'tertiary': #D2AD5B,
+    'altPrimary': #7F8230,
+    'altSecondary': #4F6647
+  ),
+  'theme2': (
+    'primary': #F7F4F5,
+    'secondary': #94CEBD,
+    'tertiary': #80C5DD,
+    'altPrimary': #91A7C3,
+    'altSecondary': #64A0CC
+  ),
+  'theme3': (
+    'primary': #F5F5F1,
+    'secondary': #8C8C84,
+    'tertiary': #AEA59A,
+    'altPrimary': #84847A,
+    'altSecondary': #5D5851
+  ),
+  'theme4': (
+    'primary': #EDF1F3,
+    'secondary': #7AAFCA,
+    'tertiary': #315A97,
+    'altPrimary': #6B81BA,
+    'altSecondary': #14223D
+  ),
+  'theme5': (
+    'primary': #F4F6EF,
+    'secondary': #A5A78A,
+    'tertiary': #F8B52D,
+    'altPrimary': #D16520,
+    'altSecondary': #313833
+  ),
+  'theme6': (
+    'primary': #F8F8F7,
+    'secondary': #D39F6E,
+    'tertiary': #A2A5AB,
+    'altPrimary': #DE4736,
+    'altSecondary': #342F32
+  ),
+  'theme7': (
+    'primary': #F7F6F4,
+    'secondary': #839494,
+    'tertiary': #91CD2E,
+    'altPrimary': #8E8A69,
+    'altSecondary': #243C1D
+  ),
+  'theme8': (
+    'primary': #F8FAF9,
+    'secondary': #F38287,
+    'tertiary': #D39DAF,
+    'altPrimary': #9D7A9C,
+    'altSecondary': #A53F6B
+  )
+);
+
+@each $theme, $variables in $colors {
+  body.#{$theme},
+  body .container.#{$theme} {
+
+    // Body Background
+    background: map-get($variables, primary);
+
+    .primary { color: map-get($variables, primary); }
+    .primaryBg { background: map-get($variables, primary); }
+
+    .secondary { color: map-get($variables, secondary); }
+    .secondaryBg { background: map-get($variables, secondary); }
+
+    .tertiary { color: map-get($variables, tertiary); }
+    .tertiaryBg { background: map-get($variables, tertiary); }
+
+    .altPrimary { color: map-get($variables, altPrimary); }
+    .altPrimaryBg { background: map-get($variables, altPrimary); }
+
+    .altSecondary { color: map-get($variables, altSecondary); }
+    .altSecondaryBg { background: map-get($variables, altSecondary); }
+
+    // Nav Highlights
+    header .container ul.nav {
+
+      li a {
+        &.active,
+        &:hover {
+          border-color: map-get($variables, tertiary);
+        }
+      }
+
+      @include respond-to($screenTablet) {
+        box-shadow: 0 6px 13px -2px map-get($variables, tertiary);
+      }
+    }
+
+    footer {
+      border-top-color: map-get($variables, tertiary);
+      box-shadow: 0 -2px 5px -11px rgba(map-get($variables, tertiary), 0.6), 0px -10px 25px -10px rgba(map-get($variables, tertiary), 0.4);
+    }
+
+    .btn.btn-primary {
+      color: map-get($variables, primary);
+      background: map-get($variables, tertiary);
+      border-color: map-get($variables, altPrimary);
+    }
+
+    .dropdown {
+      i {
+        color: map-get($variables, altSecondary);
+      }
+
+      ul li:hover {
+        border-left: 2px solid map-get($variables, tertiary);
+      }
+    }
+
+    .editor-main {
+      background: map-get($variables, tertiary)!important;
+      
+      .editor-col {
+        label.render {
+          background: map-get($variables, tertiary)!important;
+        }
+      }
+    }
+
+    .panel {
+      .panel-url {
+        border-top: 2px solid map-get($variables, tertiary);
+      }
+    }
+  }
+}

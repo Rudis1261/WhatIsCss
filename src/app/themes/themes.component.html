@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Themes overview</h1>
+</div>
+
+<div class="container theme{{theme}} theme-block" *ngFor="let theme of themes">
+    <h4>Theme {{theme}}</h4>
+    <div *ngFor="let style of styles" class="{{style}}Bg">
+        <span>{{style}}</span>
+    </div>
+</div>
+
+<div class="container logo logo-footer">
+    <span class="curly">{{ '{' }}</span>
+    &nbsp;
+    <span class="curly">{{ '}' }}</span>
+</div>

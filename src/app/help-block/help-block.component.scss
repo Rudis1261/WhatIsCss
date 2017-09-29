@@ -1,0 +1,29 @@
+@import "../../assets/scss/settings";
+@import "../../assets/scss/mixins";
+
+:host {
+  $helpBlockBackground: rgba(185, 185, 185, 0.37);
+  $helpBlockColor: #333;
+
+  .help-block {
+    position: relative;
+    background: $helpBlockBackground;
+    color: $helpBlockColor;
+    padding: 20px 15px 10px 15px;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid rgba(darken($helpBlockBackground, 10%), 0.1);
+    display: table;
+    @include border-radius(2px);
+
+    &:before {
+      content: "HELP";
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      font-size: 10px;
+      color: darken($helpBlockBackground, 50%);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "rules": {
+    ".read": false,
+    "home": {
+      ".read": true
+    },
+    "users": {
+      "$user_id": {
+        ".read": "auth != null && auth.uid == $user_id",
+        "name": {
+          ".write": "auth != null && auth.uid == $user_id"
+        },
+        "last_login": {
+          ".write": "auth != null && auth.uid == $user_id"
+        },
+        "admin": {
+          ".write": false
+        }
+      }
+    }
+  }
+}

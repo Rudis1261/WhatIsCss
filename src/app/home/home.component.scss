@@ -1,0 +1,28 @@
+@import "../../assets/scss/mixins";
+
+lazy {
+  margin: 10px auto 0;
+  padding: 0;
+  display: inline-block;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  background: #1e282d;
+  @include border-radius(4px);
+
+  width: 100%;
+  height: auto;
+  max-width: 360px;
+  min-height: 500px;
+}
+
+.btn {
+  margin: 6px 0 0 10px;
+}
+
+.btn-group {
+  margin: 0 0 0 30px;
+}
+
+.btn-holder {
+  margin: 20px 0 0;
+}
